@@ -1,0 +1,96 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddp8p52jkpa6h"]
+
+[ext_resource type="Script" path="res://addons/underfell_battle_creator/Scenes/Editor.cs" id="1_sg54b"]
+
+[sub_resource type="Theme" id="Theme_cxq7o"]
+TabContainer/constants/side_margin = 0
+
+[node name="Editor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_sg54b")
+
+[node name="GraphEdit" type="GraphEdit" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+right_disconnects = true
+
+[node name="NodesContainer" type="TabContainer" parent="."]
+visible = false
+custom_minimum_size = Vector2(300, 0)
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = SubResource("Theme_cxq7o")
+
+[node name="Events" type="TabBar" parent="NodesContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 31.0
+
+[node name="Margin" type="MarginContainer" parent="NodesContainer/Events"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Container" type="FlowContainer" parent="NodesContainer/Events/Margin"]
+
+[node name="Actions" type="TabBar" parent="NodesContainer"]
+visible = false
+
+[node name="Margin" type="MarginContainer" parent="NodesContainer/Actions"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Container" type="FlowContainer" parent="NodesContainer/Actions/Margin"]
+
+[node name="Objects" type="TabBar" parent="NodesContainer"]
+visible = false
+
+[node name="Margin" type="MarginContainer" parent="NodesContainer/Objects"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Container" type="FlowContainer" parent="NodesContainer/Objects/Margin"]
+
+[node name="NodesButton" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -101.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "Show nodes >"

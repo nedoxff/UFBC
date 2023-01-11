@@ -1,0 +1,263 @@
+[gd_scene load_steps=19 format=3 uid="uid://d0viuw0fqxbjj"]
+
+[ext_resource type="Script" path="res://addons/dialogic/Events/Text/node_input_handler.gd" id="2_aj7i3"]
+[ext_resource type="Script" path="res://addons/dialogic/Events/Audio/node_sound_player.gd" id="3_x5v3o"]
+[ext_resource type="Script" path="res://addons/dialogic/Events/Audio/node_music_player.gd" id="4_rwwh7"]
+[ext_resource type="Script" path="res://addons/dialogic/Events/Background/node_background_holder.gd" id="5_0lv2f"]
+[ext_resource type="Script" path="res://addons/dialogic/Events/Character/node_portrait_holder.gd" id="6_7cq6p"]
+[ext_resource type="Script" path="res://addons/dialogic/Events/Style/node_style.gd" id="8_2585y"]
+[ext_resource type="Script" path="res://addons/dialogic/Events/Choice/node_choice_button.gd" id="9_ygjre"]
+[ext_resource type="Script" path="res://addons/dialogic/Events/Choice/node_button_sound.gd" id="10_8aj7d"]
+[ext_resource type="AudioStream" uid="uid://b6c1p14bc20p1" path="res://addons/dialogic/Example Assets/sound-effects/typing1.wav" id="11_toebu"]
+[ext_resource type="AudioStream" uid="uid://c2viukvbub6v6" path="res://addons/dialogic/Example Assets/sound-effects/typing4.wav" id="12_wmqcn"]
+[ext_resource type="AudioStream" uid="uid://dwcre3fjf3cj8" path="res://addons/dialogic/Example Assets/sound-effects/typing5.wav" id="13_0ywii"]
+[ext_resource type="Texture2D" uid="uid://c5qfnyqrlno6p" path="res://addons/underfell_battle_creator/Resources/dialog_box.png" id="13_p3vkl"]
+[ext_resource type="Script" path="res://addons/dialogic/Events/Text/node_name_label.gd" id="15_npbkw"]
+[ext_resource type="Script" path="res://addons/dialogic/Events/Text/node_dialog_text.gd" id="16_et2k6"]
+[ext_resource type="Script" path="res://addons/dialogic/Events/Text/node_type_sound.gd" id="17_0ux64"]
+[ext_resource type="Script" path="res://addons/dialogic/Events/Voice/node_voice_player.gd" id="25_yo7eg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q3vpc"]
+bg_color = Color(0, 0, 0, 0)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 15.0
+expand_margin_top = 15.0
+expand_margin_right = 15.0
+expand_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nnmvp"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.6, 0.576471, 0.54902, 0.956863)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.733333, 0.670588, 0.627451, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.823529, 0.803922, 0.756863, 1)
+shadow_size = 5
+
+[node name="UndertaleDialogNode" type="CanvasLayer"]
+
+[node name="DialogicInputHandler" type="Node" parent="."]
+script = ExtResource("2_aj7i3")
+
+[node name="DialogicNode_SoundPlayer" type="AudioStreamPlayer" parent="."]
+script = ExtResource("3_x5v3o")
+
+[node name="DialogicNode_MusicPlayer" type="AudioStreamPlayer" parent="."]
+script = ExtResource("4_rwwh7")
+
+[node name="DialogicNode_BackgroundHolder" type="CanvasLayer" parent="."]
+layer = -1
+script = ExtResource("5_0lv2f")
+
+[node name="DialogicNode_PortraitHolder" type="CanvasLayer" parent="."]
+script = ExtResource("6_7cq6p")
+
+[node name="DefaultStyle" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 480.0
+script = ExtResource("8_2585y")
+
+[node name="Choices" type="VBoxContainer" parent="DefaultStyle"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -103.0
+offset_right = 115.0
+offset_bottom = 103.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+metadata/_edit_layout_mode = 1
+
+[node name="DialogicNode_ChoiceButton1" type="Button" parent="DefaultStyle/Choices"]
+offset_right = 230.0
+offset_bottom = 31.0
+text = "Some text"
+script = ExtResource("9_ygjre")
+
+[node name="DialogicNode_ChoiceButton2" type="Button" parent="DefaultStyle/Choices"]
+offset_top = 35.0
+offset_right = 230.0
+offset_bottom = 66.0
+text = "Some text"
+script = ExtResource("9_ygjre")
+
+[node name="DialogicNode_ChoiceButton3" type="Button" parent="DefaultStyle/Choices"]
+offset_top = 70.0
+offset_right = 230.0
+offset_bottom = 101.0
+text = "Some text"
+script = ExtResource("9_ygjre")
+
+[node name="DialogicNode_ChoiceButton4" type="Button" parent="DefaultStyle/Choices"]
+offset_top = 105.0
+offset_right = 230.0
+offset_bottom = 136.0
+text = "Some text"
+script = ExtResource("9_ygjre")
+
+[node name="DialogicNode_ChoiceButton5" type="Button" parent="DefaultStyle/Choices"]
+offset_top = 140.0
+offset_right = 230.0
+offset_bottom = 171.0
+text = "Some text"
+script = ExtResource("9_ygjre")
+
+[node name="DialogicNode_ChoiceButton6" type="Button" parent="DefaultStyle/Choices"]
+offset_top = 175.0
+offset_right = 230.0
+offset_bottom = 206.0
+text = "Some text"
+script = ExtResource("9_ygjre")
+
+[node name="DialogicNode_ButtonSound" type="AudioStreamPlayer" parent="DefaultStyle/Choices"]
+script = ExtResource("10_8aj7d")
+sound_pressed = ExtResource("11_toebu")
+sound_hover = ExtResource("12_wmqcn")
+sound_focus = ExtResource("13_0ywii")
+
+[node name="DialogBox" type="Sprite2D" parent="DefaultStyle"]
+position = Vector2(32, 250)
+texture = ExtResource("13_p3vkl")
+centered = false
+
+[node name="PanelContainer" type="PanelContainer" parent="DefaultStyle"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -268.0
+offset_top = -214.0
+offset_right = 272.0
+offset_bottom = -96.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_q3vpc")
+metadata/_edit_layout_mode = 1
+
+[node name="DialogicNode_DialogText" type="RichTextLabel" parent="DefaultStyle/PanelContainer"]
+offset_right = 540.0
+offset_bottom = 118.0
+theme_override_constants/line_separation = 2
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+theme_override_font_sizes/italics_font_size = 32
+theme_override_font_sizes/bold_italics_font_size = 32
+theme_override_font_sizes/mono_font_size = 32
+bbcode_enabled = true
+script = ExtResource("16_et2k6")
+
+[node name="DialogicNode_TypeSounds" type="AudioStreamPlayer" parent="DefaultStyle/PanelContainer/DialogicNode_DialogText"]
+script = ExtResource("17_0ux64")
+sounds = []
+play_every_character = 0
+
+[node name="SpecialStyle" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_2585y")
+style_name = "Special"
+
+[node name="Choices" type="VBoxContainer" parent="SpecialStyle"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -208.0
+offset_top = -276.0
+offset_right = -27.0
+offset_bottom = -30.0
+grow_horizontal = 0
+grow_vertical = 0
+alignment = 2
+metadata/_edit_layout_mode = 1
+
+[node name="DialogicNode_ChoiceButton1" type="Button" parent="SpecialStyle/Choices"]
+size_flags_horizontal = 8
+text = "Text"
+script = ExtResource("9_ygjre")
+
+[node name="DialogicNode_ChoiceButton2" type="Button" parent="SpecialStyle/Choices"]
+size_flags_horizontal = 8
+text = "Text"
+script = ExtResource("9_ygjre")
+
+[node name="DialogicNode_ChoiceButton3" type="Button" parent="SpecialStyle/Choices"]
+size_flags_horizontal = 8
+text = "Text"
+script = ExtResource("9_ygjre")
+
+[node name="DialogicNode_ChoiceButton4" type="Button" parent="SpecialStyle/Choices"]
+size_flags_horizontal = 8
+text = "Text"
+script = ExtResource("9_ygjre")
+
+[node name="DialogicNode_ChoiceButton5" type="Button" parent="SpecialStyle/Choices"]
+size_flags_horizontal = 8
+text = "Text"
+script = ExtResource("9_ygjre")
+
+[node name="DialogicNode_ChoiceButton6" type="Button" parent="SpecialStyle/Choices"]
+size_flags_horizontal = 8
+text = "Text"
+script = ExtResource("9_ygjre")
+
+[node name="PanelContainer" type="PanelContainer" parent="SpecialStyle"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -204.0
+offset_top = 26.0
+offset_right = 202.0
+offset_bottom = 95.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nnmvp")
+metadata/_edit_layout_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="SpecialStyle/PanelContainer"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SpecialStyle/PanelContainer/MarginContainer"]
+offset_right = 47.0
+offset_bottom = 49.0
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="DialogicNode_NameLabel" type="Label" parent="SpecialStyle/PanelContainer/MarginContainer/VBoxContainer"]
+text = "Name"
+horizontal_alignment = 1
+script = ExtResource("15_npbkw")
+use_character_color = false
+
+[node name="DialogicNode_DialogText" type="RichTextLabel" parent="SpecialStyle/PanelContainer/MarginContainer/VBoxContainer"]
+text = "Some default text"
+fit_content_height = true
+script = ExtResource("16_et2k6")
+Align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+script = ExtResource("25_yo7eg")

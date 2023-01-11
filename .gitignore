@@ -1,0 +1,8 @@
+# Godot 4+ specific ignores
+.git/
+.godot/
+.idea/
+flowey.tres
+testing/
+addons/dialogic/
+addons/underfell_battle_creator/Resources

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bssa258cman5y"]
+
+[ext_resource type="Script" path="res://addons/underfell_battle_creator/Scenes/Nodes/Events/Start.cs" id="1_h2q1u"]
+
+[node name="Start" type="GraphNode"]
+offset_right = 124.0
+offset_bottom = 54.0
+title = "Start"
+show_close = true
+script = ExtResource("1_h2q1u")

@@ -1,0 +1,105 @@
+[gd_scene load_steps=9 format=3 uid="uid://porjh8gl07qc"]
+
+[ext_resource type="Texture2D" uid="uid://desduvw4u8rdn" path="res://addons/underfell_battle_creator/Resources/Background/spr_battlebg_0.png" id="1_6h4d2"]
+[ext_resource type="Texture2D" uid="uid://c5qfnyqrlno6p" path="res://addons/underfell_battle_creator/Resources/dialog_box.png" id="2_0b0hv"]
+[ext_resource type="Texture2D" uid="uid://cuo430qjrxsh6" path="res://addons/underfell_battle_creator/Resources/Buttons/underfell_fight_button.png" id="3_x36n5"]
+[ext_resource type="Texture2D" uid="uid://xwht1rqcal23" path="res://addons/underfell_battle_creator/Resources/Buttons/underfell_act.png" id="4_66aoq"]
+[ext_resource type="Texture2D" uid="uid://cgl0x4cb443j6" path="res://addons/underfell_battle_creator/Resources/Buttons/underfell_item.png" id="5_dat16"]
+[ext_resource type="Texture2D" uid="uid://bp7cvdpyshmkj" path="res://addons/underfell_battle_creator/Resources/Buttons/underfell_mercy.png" id="6_86fqp"]
+[ext_resource type="FontFile" uid="uid://crbsylgdwfeao" path="res://addons/underfell_battle_creator/Resources/Fonts/mars.ttf" id="7_4kbek"]
+[ext_resource type="FontFile" uid="uid://dg2svs21jww1t" path="res://addons/underfell_battle_creator/Resources/Fonts/8bit.ttf" id="8_fwtw3"]
+
+[node name="BattlePreview" type="Node2D"]
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 640.0
+offset_bottom = 480.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="BattleBackground" type="Sprite2D" parent="."]
+position = Vector2(15, 10)
+texture = ExtResource("1_6h4d2")
+centered = false
+
+[node name="DialogBox" type="Sprite2D" parent="."]
+position = Vector2(30, 250)
+scale = Vector2(1, 0.93)
+texture = ExtResource("2_0b0hv")
+centered = false
+
+[node name="FightButton" type="Sprite2D" parent="."]
+position = Vector2(32, 430)
+texture = ExtResource("3_x36n5")
+centered = false
+
+[node name="ActButton" type="Sprite2D" parent="."]
+position = Vector2(185, 432)
+texture = ExtResource("4_66aoq")
+centered = false
+
+[node name="ItemButton" type="Sprite2D" parent="."]
+position = Vector2(345, 432)
+texture = ExtResource("5_dat16")
+centered = false
+
+[node name="MercyButton" type="Sprite2D" parent="."]
+position = Vector2(500, 432)
+texture = ExtResource("6_86fqp")
+centered = false
+
+[node name="PreviewName" type="Label" parent="."]
+offset_left = 30.0
+offset_top = 398.0
+offset_right = 170.0
+offset_bottom = 421.0
+theme_override_fonts/font = ExtResource("7_4kbek")
+theme_override_font_sizes/font_size = 20
+text = "PREVIEW LV.1"
+vertical_alignment = 2
+
+[node name="DebugLabel" type="Label" parent="."]
+offset_left = 46.0
+offset_top = 256.0
+offset_right = 594.0
+offset_bottom = 384.0
+theme_override_constants/line_spacing = -10
+theme_override_fonts/font = ExtResource("8_fwtw3")
+theme_override_font_sizes/font_size = 32
+autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 245.0
+offset_top = 400.0
+offset_right = 358.0
+offset_bottom = 420.0
+mouse_filter = 2
+
+[node name="PreviewHP" type="Label" parent="HBoxContainer"]
+offset_top = 2.0
+offset_right = 20.0
+offset_bottom = 21.0
+theme_override_fonts/font = ExtResource("7_4kbek")
+theme_override_font_sizes/font_size = 16
+text = "HP"
+vertical_alignment = 1
+
+[node name="PreviewHPRect" type="ColorRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(25, 20)
+offset_left = 24.0
+offset_right = 49.0
+offset_bottom = 23.0
+mouse_filter = 2
+color = Color(1, 1, 0, 1)
+
+[node name="PreviewHPValue" type="Label" parent="HBoxContainer"]
+offset_left = 53.0
+offset_right = 131.0
+offset_bottom = 23.0
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("7_4kbek")
+theme_override_font_sizes/font_size = 20
+text = "20 / 20"
+vertical_alignment = 1

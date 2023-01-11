@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2y7x05buqmbd"]
+
+[ext_resource type="Script" path="res://addons/underfell_battle_creator/DraggableSprite.cs" id="1_3pfit"]
+
+[node name="DraggableSprite" type="TextureRect"]
+scale = Vector2(1e-05, 1e-05)
+script = ExtResource("1_3pfit")
