@@ -16,13 +16,13 @@ public class CodeGenerator
 
         void ChangeStatus(string text)
         {
-            statusLabel.Text = "Analyzing node connections..";
+            statusLabel.Text = text;
             statusLabel.QueueRedraw();
         }
         
         try
         {
-            ChangeStatus("Analyzing connections..");
+            ChangeStatus("Analyzing node connections..");
             AnalyzeConnections(connections);
         }
         catch (Exception e)
