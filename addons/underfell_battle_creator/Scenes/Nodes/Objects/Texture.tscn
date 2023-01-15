@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3 uid="uid://clvpw5doeegxc"]
+
+[ext_resource type="Script" path="res://addons/underfell_battle_creator/Scenes/Nodes/Objects/TextureNode.cs" id="1_c44pn"]
+
+[node name="Texture" type="GraphNode"]
+title = "Texture"
+show_close = true
+resizable = true
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color(1, 1, 1, 1)
+slot/1/left_icon = null
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color(1, 1, 1, 1)
+slot/1/right_icon = null
+slot/1/draw_stylebox = true
+slot/2/left_enabled = false
+slot/2/left_type = 0
+slot/2/left_color = Color(1, 1, 1, 1)
+slot/2/left_icon = null
+slot/2/right_enabled = true
+slot/2/right_type = 3
+slot/2/right_color = Color(1, 1, 1, 1)
+slot/2/right_icon = null
+slot/2/draw_stylebox = true
+script = ExtResource("1_c44pn")
+
+[node name="PathLabel" type="Label" parent="."]
+layout_mode = 2
+text = "Path"
+
+[node name="PathContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Path" type="LineEdit" parent="PathContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Browse" type="Button" parent="PathContainer"]
+layout_mode = 2
+text = "..."
+
+[node name="Texture" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 1
+stretch_mode = 5

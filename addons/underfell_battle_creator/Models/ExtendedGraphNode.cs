@@ -7,9 +7,8 @@ public partial class ExtendedGraphNode: GraphNode
 {
     public override void _Ready()
     {
+        //TODO: implement disconnecting connected nodes
         CloseRequest += QueueFree;
         ResizeRequest += size => Size = size;
-        SelectedSignal += () => Editor.SelectedNodes.Add(this);
-        Deselected += () => Editor.SelectedNodes.Remove(this);
     }
 }

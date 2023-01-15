@@ -78,9 +78,7 @@ offset_bottom = 420.0
 mouse_filter = 2
 
 [node name="PreviewHP" type="Label" parent="HBoxContainer"]
-offset_top = 2.0
-offset_right = 20.0
-offset_bottom = 21.0
+layout_mode = 2
 theme_override_fonts/font = ExtResource("7_4kbek")
 theme_override_font_sizes/font_size = 16
 text = "HP"
@@ -88,16 +86,12 @@ vertical_alignment = 1
 
 [node name="PreviewHPRect" type="ColorRect" parent="HBoxContainer"]
 custom_minimum_size = Vector2(25, 20)
-offset_left = 24.0
-offset_right = 49.0
-offset_bottom = 23.0
+layout_mode = 2
 mouse_filter = 2
 color = Color(1, 1, 0, 1)
 
 [node name="PreviewHPValue" type="Label" parent="HBoxContainer"]
-offset_left = 53.0
-offset_right = 131.0
-offset_bottom = 23.0
+layout_mode = 2
 size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("7_4kbek")
 theme_override_font_sizes/font_size = 20

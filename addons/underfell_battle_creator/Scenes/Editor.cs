@@ -6,6 +6,7 @@ using System.Linq;
 using Godot.Collections;
 using UNDERFELLBattleCreator.addons.underfell_battle_creator;
 using UNDERFELLBattleCreator.addons.underfell_battle_creator.Extensions;
+using UNDERFELLBattleCreator.addons.underfell_battle_creator.Generator;
 using Array = Godot.Collections.Array;
 
 [Tool]
@@ -13,6 +14,7 @@ public partial class Editor : Control
 {
     private Button _nodesButton => GetNode<Button>("NodesButton");
     private GraphEdit _edit => GetNode<GraphEdit>("GraphEdit");
+    private Button _previewButton => GetNode<Button>("PreviewButton");
     
     public static List<GraphNode> SelectedNodes = new(); 
     private TabContainer _nodesContaner => GetNode<TabContainer>("NodesContainer");
@@ -35,6 +37,11 @@ public partial class Editor : Control
                 _nodesButton.Position += new Vector2(310, 0);
             }
         }));
+
+        _previewButton.Pressed += () =>
+        {
+            GD.Print(CodeGenerator.Generate(_edit.GetConnectionList()));
+        };
 
         foreach (var child in _nodesContaner.GetChildren())
         {
@@ -60,6 +67,8 @@ public partial class Editor : Control
         _edit.ConnectionRequest += OnConnectionRequest;
         _edit.DisconnectionRequest += OnDisconnectRequest;
         _edit.DeleteNodesRequest += OnDeleteRequest;
+        _edit.NodeSelected += node => SelectedNodes.Add(node as GraphNode);
+        _edit.NodeDeselected += node => SelectedNodes.Remove(node as GraphNode);
     }
 
     private void OnDeleteRequest(Array nodes)

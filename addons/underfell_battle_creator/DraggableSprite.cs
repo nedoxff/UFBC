@@ -7,6 +7,7 @@ public partial class DraggableSprite : TextureRect
     private bool _selected;
     public override void _Ready()
     {
+        if (Texture == null) return;
         var rect = new RectangleShape2D();
         rect.Size = Texture.GetSize();
 

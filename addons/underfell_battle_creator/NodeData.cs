@@ -7,7 +7,7 @@ public struct NodeData
     public static Dictionary<string, NodeData> Data = new()
     {
         {"SetOpponents", new(allowMultipleConnections: false)},
-        {"Position", new(allowMultipleConnections: true)}
+        {"Texture", new NodeData(allowMultipleConnections: true)}
     };
 
     public bool AllowMultipleConnections;
